@@ -84,6 +84,11 @@ describe("Cmi5", () => {
       const cmi5 = new Cmi5();
       expect(cmi5.getLaunchParameters()).toEqual(DEFAULT_LAUNCH_PARAMETERS);
     });
+
+    it("uses launch params from parameters", async () => {
+      const cmi5 = new Cmi5(DEFAULT_LAUNCH_PARAMETERS);
+      expect(cmi5.getLaunchParameters()).toEqual(DEFAULT_LAUNCH_PARAMETERS);
+    });
   });
 
   describe("isCmiAvailable", () => {

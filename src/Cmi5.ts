@@ -77,8 +77,9 @@ export default class Cmi5 {
     return Cmi5._xapi;
   }
 
-  constructor() {
-    this.launchParameters = this.getLaunchParametersFromLMS();
+  constructor(launchParameters?: LaunchParameters) {
+    this.launchParameters =
+      launchParameters || this.getLaunchParametersFromLMS();
     if (!this.launchParameters.fetch) {
       throw Error("Unable to construct, no `fetch` parameter found in URL.");
     } else if (!this.launchParameters.endpoint) {
